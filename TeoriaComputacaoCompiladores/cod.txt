@@ -1,7 +1,6 @@
+numero_3 = 90.0
 
-"teste"  # ok \
-
-valor = 0
-
-if valor == 0:
-    print("oi")
+#if teste
+teste =  (4)
+if numero_3 == 90:
+    print('o numero e noventa')

@@ -31,13 +31,13 @@ class Interpreter:
                     
                     if self.current_line!=lines_i:
                         if self.in_comment:
-                            self.append_list(self.word_buffer, 'Comment', lines_i, self.word_end, 2)
+                            self.append_list(self.word_buffer, 'Comment', self.current_line, self.word_end, 2)
                         elif self.word_buffer in self.reserved_words:
-                            self.append_list(self.word_buffer, 'Reserved Word', lines_i, self.word_end, 2)
+                            self.append_list(self.word_buffer, 'Reserved Word', self.current_line, self.word_end, 2)
                         else:
                             for token, pattern in self.tokens.items():
                                 if re.fullmatch(pattern, self.word_buffer):
-                                    self.append_list(self.word_buffer, token, lines_i, self.word_end, 2)
+                                    self.append_list(self.word_buffer, token, self.current_line, self.word_end, 2)
                         self.word_buffer = ''
                         self.word_end = 0
                         self.current_line = lines_i
