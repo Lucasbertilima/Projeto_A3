@@ -1,0 +1,7 @@
+
+"teste"  # ok \
+
+valor = 0
+
+if valor == 0:
+    print("oi")
